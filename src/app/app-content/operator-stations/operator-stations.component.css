@@ -1,0 +1,199 @@
+.button-27 {
+  appearance: none;
+  background-color: #000000;
+  border: 2px solid #1A1A1A;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  will-change: transform;
+}
+
+.button-27:disabled {
+  pointer-events: none;
+}
+
+.button-27:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.button-27:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+
+a {
+  color: #494949;
+  text-decoration: none;
+}
+
+a:hover {
+  color:#000000; 
+  text-decoration:none; 
+  cursor:pointer;  
+}
+
+.profile-container {
+  margin: -50px 10px 10px 10px;
+  color: #fff;
+    max-width: 95%;
+    
+    padding: 20px;
+    background-image: url('/assets/BG1.jpg'); 
+    background-size:cover;
+    border: 3px solid #fd1b1b;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .description {
+    margin-bottom: 150px;
+  }
+  
+  .current-level {
+    margin-bottom: 50px;
+    float: right;
+    margin: 15px 25px 0px 0px;
+    font-weight: 200;
+    font-size: larger;
+  }
+  
+  .level-grid {
+    margin-bottom: 50px;
+  }
+  
+  .level-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+  
+  .level-grid-item {
+    color: #4e4e4e;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .level-grid-item h3 {
+    margin-top: 0;
+  }
+  
+  .level-grid-item p {
+    margin-bottom: 30px;
+  }
+
+ /*PROGRESS BAR FOR LEVELS*/
+ :root {
+  --loading-bar-width: 68%; /* default value */
+}
+
+ .progress {
+  background: rgba(24, 23, 23, 0.1);
+  justify-content: flex-start;
+  border-radius: 100px;
+  align-items: center;
+  position: relative;
+  padding: 0 0px;
+  display: flex;
+  height: 20px;
+  width: 100%;
+}
+
+.progress-value {
+  animation: load 1s normal forwards;
+  box-shadow: 0 10px 40px -10px #ffffff;
+  border-radius: 100px;
+  background: #30b324;
+  height: 20px;
+  width: 100%;
+}
+
+@keyframes load {
+  0% { width: 0; }
+  100% { width: var(--loading-bar-width); }
+}
+
+
+  /* Scrollable container for team members */
+  .scrollable-container {
+     max-height: 1000px;/* Set the height you want for the scrollable area */
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    overflow-y: auto;  /* Enables vertical scrolling */
+    padding: 0px;     /* Optional: adds padding inside the container */
+    border: 1px solid #ddd; /* Optional: adds a border around the scrollable container */
+    border-radius: 10px; /* Optional: adds rounded corners */
+    background-color: #f9f9f9; /* Optional: background color for contrast */
+  }
+  
+
+  .filter-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .filter-container input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+  }
+
+
+
+
+.station-level-container {
+    
+    margin: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  table {
+    width: 100%; 
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 15px;
+
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+
+  }
+  td {
+    
+    color: black;
+  }
+  th {
+    background-color: #333;
+    
+  }
+
+  

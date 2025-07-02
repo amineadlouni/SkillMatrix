@@ -1,0 +1,132 @@
+@use '@angular/material' as mat;
+@import "~bootstrap/dist/css/bootstrap.css";
+
+@include mat.core();
+
+/* For use in src/lib/core/theming/_palette.scss */
+$nexteer_red: (
+    50 : #fce3e7,
+    100 : #f7bac3,
+    200 : #f28c9b,
+    300 : #ed5e73,
+    400 : #e93c55,
+    500 : #e51937,
+    600 : #e21631,
+    700 : #de122a,
+    800 : #da0e23,
+    900 : #d30816,
+    A100 : #fffcfd,
+    A200 : #ffc9cc,
+    A400 : #ff969b,
+    A700 : #ff7d83,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+
+$accent-white: (
+    50 : #f3f3f3,
+    100 : #e1e1e1,
+    200 : #cecece,
+    300 : #bababa,
+    400 : #ababab,
+    500 : #9c9c9c,
+    600 : #949494,
+    700 : #8a8a8a,
+    800 : #808080,
+    900 : #6e6e6e,
+    A100 : #fdf0f0,
+    A200 : #f8c2c2,
+    A400 : #ff8888,
+    A700 : #ff6e6e,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+ 
+$my-primary: mat.define-palette($nexteer_red, 900);
+$my-accent: mat.define-palette($accent-white, 50);
+// The "warn" palette is optional and defaults to red if not specified.
+$my-warn: mat.define-palette(mat.$red-palette);
+$my-theme: mat.define-light-theme((
+ color: (
+   primary: $my-primary,
+   accent: $my-accent,
+   warn: $my-warn
+ ),
+ typography: mat.define-typography-config(),
+ density: 0,
+));
+
+@mixin custom-mat-styles() {
+    .ok-snackbar  {
+      background-color: #37d459;
+      color: black;
+      border:1px solid black;
+      .mat-mdc-snack-bar-actions{
+        .mat-mdc-button{
+          background-color: #41f067;
+          color: black !important;;
+        }
+      }
+    }
+    .info-snackbar  {
+      background-color: #cfcd32;
+      border:1px solid black;
+      color:black;
+      .mat-mdc-snack-bar-actions{
+        .mat-mdc-button{
+          background-color: #e7e538;
+          color:black!important;
+        }
+      }
+    }
+    .nok-snackbar  {
+      background-color: mat.get-color-from-palette($my-warn, "darker");
+      border:1px solid black;
+      color:white;
+      text-transform: uppercase;
+      .mat-mdc-simple-snackbar{
+        justify-content: center;
+      }
+    }
+    .mat-mdc-snack-bar-container {
+        --mdc-snackbar-container-color: none;
+        --mdc-snackbar-supporting-text-color:none
+        --mat-snack-bar-button-color: none;
+    }
+    
+}
+
+@include custom-mat-styles();
+@include mat.all-component-themes($my-theme);
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

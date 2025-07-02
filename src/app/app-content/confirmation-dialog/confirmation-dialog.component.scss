@@ -1,0 +1,20 @@
+/* Style the dialog box */
+.mat-dialog-container {
+    border-radius: 20px; /* Rounded corners */
+    background-color: black; /* Black background */
+    color: white; /* White font color for text inside dialog */
+  }
+  
+  /* Style the "Yes" and "No" buttons */
+  .mat-dialog-actions button {
+    color: white; /* White font color */
+    background-color: black; /* Black button background */
+    border: none; /* Remove button border */
+    padding: 8px 16px;
+    margin: 0 5px;
+    border-radius: 5px; /* Rounded corners */
+  }
+  
+  .mat-dialog-actions button:hover {
+    background-color: #333; /* Slightly lighter black for hover effect */
+  }

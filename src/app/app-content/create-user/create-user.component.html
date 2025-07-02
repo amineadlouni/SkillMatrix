@@ -1,0 +1,62 @@
+
+
+
+
+
+
+<div class="profile-container">
+ <h3 style="margin: 50px;text-align: center;">Create new station operator</h3>
+  <div class="level-grid">
+    
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="level-grid-container">
+        <div class="level-grid-item" style="margin-left: 25%;margin-right: 25%;width: 50%;">
+          <div class="grid-item input" style="margin-left: 25%;margin-right: 25%;width: 50%;">
+            <mat-icon style="margin-left: 35%;margin-right: 35%;width: 30%;height: 100px;font-size: 95px;">person</mat-icon>
+          </div>
+    
+          <div class="grid-item input" style="margin-left: 25%;margin-right: 25%;width: 50%;">
+            <input class="input1" style="width: 100%" formControlName="name" type="text" placeholder="Full name">
+          </div>
+    
+          <!-- Radio buttons for project selection -->
+          <div class="grid-item input" style="margin-left: 25%;margin-right: 25%;width: 50%;">
+            <label>Project :</label>
+            <mat-radio-group formControlName="project">
+              <mat-radio-button value="eps">EPS</mat-radio-button>
+              <mat-radio-button value="HalfShaft">HalfShaft</mat-radio-button>
+            </mat-radio-group>
+          </div>
+    
+          <div>
+            <table style="margin-left: 25%;margin-right: 25%;width: 50%;">
+              <td><input class="input1" style="width: 100%" formControlName="svNumber" type="text" placeholder="SV number" (input)="updateStationName()"></td>
+              <td style="font-size: larger;">-</td>
+              <td><input class="input1" style="width: 100%" formControlName="opNumber" type="text" placeholder="Op number" (input)="updateStationName()"></td>
+            
+            </table>
+              
+            <table style="margin-left: 25%;margin-right: 25%;width: 50%;">
+              <td style="width: 50%;font-size: smaller;font-style: italic;">Station Name Will be :</td>
+              <td style="font-size: large;font-weight: 1000;"><input class="input1" style="width: 100%; border: transparent; background-color: white;font-size: smaller;" formControlName="stationName" type="text" placeholder="Station Name" readonly></td>
+            </table>
+          </div>
+    
+          <div class="grid-item input" style="margin-left: 25%;margin-right: 25%;width: 50%;">
+            <input class="input1" style="width: 100%" formControlName="leader" type="text" placeholder="Leader">
+          </div>
+          <div class="grid-item input" style="margin-left: 25%;margin-right: 25%;width: 50%;">
+            <input class="input1" style="width: 100%" formControlName="matricule" type="text" placeholder="Matricule">
+          </div>
+          <div class="grid-item input" style="margin-left: 25%;margin-right: 25%;width: 50%;">
+            <input class="input1" style="width: 100%" formControlName="currentLevel" type="text" placeholder="Current Level">
+          </div>
+          <div class="grid-item input" style="margin-left: 25%;margin-right: 25%;width: 50%;">
+            <button class="button-27" mat-raised-button type="submit">Create User</button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+  </div>
+</div>

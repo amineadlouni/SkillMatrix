@@ -1,0 +1,61 @@
+<div class="profile-container">
+    <p><span style="font-size: 42px; font-weight: 400;">
+      <mat-icon style="font-size: 82px; height: 70px; width: 100px;">person</mat-icon>{{ operator.Name }}
+    </span> 
+      <span style="font-size: 28px; padding-left: 1%; font-weight: 500; color: #ffffff;">
+        IN {{ operator.StationName }} [ {{ operator.Project.toUpperCase()}} ]
+      </span>
+      <span class="current-level">
+        <img src="./assets/level{{ operator.currentLevel }}.png" 
+             style="border: 2px solid white; border-radius: 7px; box-shadow: 0 0 20px rgb(255, 68, 68);">
+      </span>
+    </p>
+  
+    <div class="description">
+      
+    </div>
+  
+    <div class="level-grid">
+        <h2 style="text-align: center;margin-bottom: 1%;">STATIONS HISTORY</h2>
+        <div style="text-align: center; margin-bottom: 1%;">
+            <div>- apply filters to look for specific station, level or scors that {{operator.Name}} already applied,</div>
+            <div> this will work only for levels that he actually passed and will remove levels that have scores of 0 .</div>
+        
+        </div>
+        <!-- Filter Inputs -->
+        <div class="filter-container" style="margin-left: 31%;margin-right: 30%; width: 40%;">
+
+            <input type="text" placeholder="Filter by Station" [(ngModel)]="stationFilter" (input)="applyFilters()">
+            <input type="text" placeholder="Filter by Level ID" [(ngModel)]="levelFilter" (input)="applyFilters()">
+            <input type="text" placeholder="Filter by Score" [(ngModel)]="scoreFilter" (input)="applyFilters()">
+        </div>
+
+        <!-- Results Table -->
+        <div class="scrollable-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Station</th>
+              <th>Level ID</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let station of filteredStationLevels">
+              <td>{{ station.Station }}</td>
+              <td>LEVEL {{ station.LevelID }}</td>
+              <td>{{ station.Score }}%</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+    </div>
+  
+    <!-- Navigation buttons -->
+    <div style="width: 30%; margin-left: 35%; margin-right: 35%; margin-top: 5%;">
+        <button class="button-27" (click)="goBackToPrevPage()">Back</button>
+        <a routerLink="/application/create-user">
+          <button class="button-27" style="height: 70px; margin-top: 2px;">Create New Operator</button>
+        </a>
+    </div>
+</div>

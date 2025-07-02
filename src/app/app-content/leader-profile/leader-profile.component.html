@@ -1,0 +1,86 @@
+<div class="profile-container">
+  <div class="profile-container" style="margin-top: 1%;margin-bottom: 5%;margin-left: 2%; border-color: black;box-shadow: 10px;width: 100%;">
+  <div style="text-align: center;margin-left: 3%;margin-right: 3%;">
+<table style="width: 100%;">
+<tr>
+<td style="margin-right: 20%;">
+  <div>
+    <img src="./assets/leader.png" style="height: 150px;width: 150px;"> 
+    </div>
+      <span style="font-size: 42px;font-weight: 400;">{{ leader.Name }} </span><span>[Team Leader]</span>
+</td>
+<td>
+  <tr>
+  <h4>Leader details</h4>  
+    <table >
+      
+      <tr><td style="width: 150px;height: 30px;font-weight: 300;font-size: small;">PROJECT</td>    <td style="font-weight:100;font-size: small;">{{ leader.Project }}</td></tr>
+      <tr><td style="width: 150px;height: 30px;font-weight: 300;font-size: small;">TEAM SIZE</td>  <td style="font-weight:100;font-size: small;">{{ leader.TeamMembers.length }}</td></tr>
+      <tr><td style="width: 150px;height: 30px;font-weight: 300;font-size: small;">DESCIPTION</td> <td style="font-weight:100;font-size: small;">{{ leader.description }}</td></tr>
+    </table>
+
+</tr>
+<tr>
+  <div style="text-align: left;">
+</div>
+
+</tr>
+</td>
+</tr>
+</table>    
+
+</div>
+  
+</div>
+  <div class="level-grid">
+    <h4 style="text-align: center;margin-bottom: 50px;"> Search your Team members by </h4>
+
+    <h4 style="text-align: center;margin-bottom: 50px;">
+
+      <input class="input1" style="width: 20%;" type="text" placeholder="StationID" (input)="onStationInputChange($event)">
+      OR
+      <input class="input1" style="width: 20%;" type="text" placeholder="Name" (input)="onNameInputChange($event)">
+
+      <div style="text-align: center; margin: 20px;">
+        <mat-slide-toggle (change)="toggleDisabledOperators()" ><span style="color: white;">Show Disabled Operators</span></mat-slide-toggle>
+      </div>
+    
+    </h4>
+    <div class="scrollable-container">
+      <div class="level-grid-container">
+        <div *ngFor="let member of leader.TeamMembers">
+          <div *ngIf="member.StationName.includes(InputedStationID) && member.Name.includes(InputedName)">
+            <div class="level-grid-item">
+              <a routerLink="/application/user-profile/{{ member.Matricule }}">
+                <span style="font-size: 42px; font-weight: 400; margin-left: 10px;">
+                  {{ member.Name }}
+                </span>
+                <span style="font-weight: 600;"> IN {{ member.StationName }}</span>
+              </a>
+              <img src="./assets/level{{ member.currentLevel }}.png" style="border: 2px solid white; border-radius: 7px; height: 40px; margin-bottom: 1.5%; margin-left: 1%; float: right;">
+              
+              <table style="width: 100%;">
+                <td *ngFor="let level of member.completedLevels">
+                  <tr>
+                    <div class="progress">
+                      <div class="progress-value" style="--loading-bar-width: {{ level.score }}%"></div>
+                    </div>
+                  </tr>
+                </td>
+              </table>
+  
+              <p style="margin: 1%;">Details: {{ member.Project }}</p>
+  
+              <a routerLink="/application/edit-user/{{ member.Matricule }}">
+                <button class="button-27" style="width: 10%;">EDIT</button>
+              </a>
+              <button class="button-27" style="width: 10%; margin-left: 1%;" (click)="openDeleteConfirmationDialog(member.Matricule)">DELETE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+</div>

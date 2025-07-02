@@ -1,0 +1,91 @@
+<!--
+<mat-drawer-container class="drawer-container" autosize>
+  <ng-content></ng-content>
+    <mat-drawer #drawer class="drawer drawer-background-tint" mode="side" [opened]="isOpened">
+      <div class="drawer-content d-flex flex-column justify-content-center align-items-center">
+          <img class="nexteer-logo" src="./assets/SkillMatrixLogo.png" />
+        <div>
+          <p class="app-name">{{appName}}</p>
+        </div>
+        <div>
+          <p class="app-desc">Short app desc</p>
+        </div>
+        <mat-divider class="divider"></mat-divider>
+        <div class="mb-auto">
+          <mat-list>
+            <mat-list-item>
+              <button mat-button [routerLink]="['example']">Page 1</button>
+            </mat-list-item>
+            <mat-list-item>
+              <button mat-button [routerLink]="['example']">Page 2</button>
+            </mat-list-item>
+            <mat-list-item>
+              <button mat-button [routerLink]="['example']">Page 3</button>
+            </mat-list-item>
+          </mat-list>
+        </div>
+        <div>
+          <button mat-fab color="red" [routerLink]="['pageInfo']">
+            <mat-icon>help_outline</mat-icon>
+          </button>
+        </div>
+      </div>
+    </mat-drawer>
+    <mat-card class='content-container'>
+      <router-outlet></router-outlet>
+    </mat-card>
+  </mat-drawer-container>
+  -->
+  <div class="hide"></div>
+  <div>
+    <ng-content></ng-content>
+</div>
+<header class="main-head">
+  
+      <nav class="head-nav">
+        <div>
+        <img class="icon" src="./assets/SkillMatrixWhiteLogoOnly.png" width="80%" style="margin: 10% 10% 10% 10%;"/>
+        <img class="icon2" src="./assets/SkillMatrixWhite.png" width="100%" style="margin-top: -100%;"/>
+      </div>
+        <ul class="menu">
+          <mat-divider class="divider"></mat-divider>
+        <div class="mb-auto" >
+          <ul class="menu">
+            <li>
+              <a mat-button [routerLink]="['leader-profile']" >
+                <mat-icon class="svg">home_filled</mat-icon>
+                <span>Home</span></a>
+            </li>
+            <li>
+              <a mat-button [routerLink]="['profile-manager']">
+                <mat-icon class="svg">person</mat-icon>
+                <span>Profile management</span></a>
+            </li>
+            <li>
+              <a mat-button routerLink="/application/user-profile/1">
+                <mat-icon class="svg">assignment_turned_in</mat-icon>
+                <span>Team Levels</span></a>
+            </li>
+
+            <li>
+              <a mat-button [routerLink]="['example']">
+                <mat-icon class="svg">settings</mat-icon>
+                <span>settings</span></a>
+            </li>
+          </ul>
+        </div>
+        </ul>
+        <div class="bottom">
+        <a mat-button [routerLink]="['pageInfo']" style="margin-top: 100%; margin-bottom: 0%;" >
+          <mat-icon class="svg">info</mat-icon>
+          <span>Page Infos</span></a>
+        </div>
+      </nav>
+</header> <!-- //main-head -->
+
+<div class="wrap-all-the-things">
+
+  <mat-card class='content-container' style="background-color: #252525;">
+    <router-outlet></router-outlet>
+  </mat-card>
+</div>
