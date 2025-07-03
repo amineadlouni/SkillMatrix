@@ -16,7 +16,7 @@ import { firstValueFrom } from 'rxjs/internal/firstValueFrom';
 export class UserProfileComponent implements OnInit {
 
   operator: UserProfile;
-  lvl: number=0;
+  lvl=0;
   Matricule:number;
 
   constructor(private uiService: UIService,private route: ActivatedRoute,private router: Router,    private location:Location,private apiService: ApiService) 
@@ -43,7 +43,7 @@ export class UserProfileComponent implements OnInit {
   goBackToPrevPage(): void {
     this.location.back();
   }
-  redirectWithParam(lvl: String) {
+  redirectWithParam(lvl: string) {
     const url = this.router.serializeUrl(this.router.createUrlTree(['../application/level-details'], {
        queryParams: { 
          level : lvl,

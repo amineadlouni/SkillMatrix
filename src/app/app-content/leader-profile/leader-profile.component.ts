@@ -22,10 +22,10 @@ interface LeaderProfile {
   styleUrls: ['./leader-profile.component.css']
 })
 export class LeaderProfileComponent implements OnInit, OnChanges {
-  InputedStationID: string = "";
-  InputedName: string = "";
+  InputedStationID = "";
+  InputedName = "";
   leader: LeaderProfile;
-  showDisabledOperators: boolean = false;  // New toggle state to show disabled operators
+  showDisabledOperators = false;  // New toggle state to show disabled operators
   stationSearch$ = new Subject<string>();  
   nameSearch$ = new Subject<string>();     
 

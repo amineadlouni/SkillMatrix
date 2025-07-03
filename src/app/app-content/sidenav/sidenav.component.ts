@@ -9,9 +9,9 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class SidenavComponent implements OnInit {
 
-  appName: string = ''
-  appDesc: string = ''
-  isOpened:boolean = false;
+  appName = ''
+  appDesc = ''
+  isOpened = false;
   constructor(private uiService: UIService) {
     
   }

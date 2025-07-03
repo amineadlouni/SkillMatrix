@@ -47,12 +47,12 @@ import { MatInputModule } from '@angular/material/input';
   styleUrls: ['./topnav.component.scss']
 })
 export class TopnavComponent implements OnInit {
-  componentName: string = '';
-  prevComponentName: string = '';
+  componentName = '';
+  prevComponentName = '';
   searchForm: FormGroup = new FormGroup({
     matricule: new FormControl('', Validators.required)
   });
-  searchError: string='';
+  searchError='';
 
   constructor(private uiService: UIService, private router: Router,private formBuilder: FormBuilder) {}
 

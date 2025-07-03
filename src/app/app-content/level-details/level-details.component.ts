@@ -19,7 +19,7 @@ export class LevelDetailsComponent implements OnInit {
   Matricule: number;
   lvl: number;
   selectedLvl: Level;
-  isDataLoaded: boolean = false;  // New flag to control data loading
+  isDataLoaded = false;  // New flag to control data loading
 
   constructor(
     private uiService: UIService,

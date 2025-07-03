@@ -9,7 +9,7 @@ import { UIService } from 'src/app/_utility-services/ui.service';
   styleUrls: ['./example.component.scss']
 })
 export class ExampleComponent implements OnInit {
-  title: string='my title';
+  title='my title';
   constructor(
               private uiService: UIService) {
   }

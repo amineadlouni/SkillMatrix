@@ -24,9 +24,9 @@ export class OperatorStationsComponent implements OnInit {
   filteredStationLevels: StationLevel[] = []; // Holds the filtered data for display
 
   // Filter properties
-  stationFilter: string = '';
-  levelFilter: string = '';
-  scoreFilter: string = '';
+  stationFilter = '';
+  levelFilter = '';
+  scoreFilter = '';
 
   constructor(private route: ActivatedRoute, private uiService: UIService, private apiService: ApiService, private location: Location) {
     this.operatorMatricule = +this.route.snapshot.paramMap.get('matricule')!;

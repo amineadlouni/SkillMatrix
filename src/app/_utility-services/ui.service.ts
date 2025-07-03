@@ -14,16 +14,16 @@ export class UIService {
               private router: Router) {  
               }
 
-  private currentToolbarState: boolean = false;
-  private toolbarStateChanges: BehaviorSubject<boolean> = new BehaviorSubject(this.currentToolbarState)
+  private currentToolbarState = false;
+  private toolbarStateChanges = new BehaviorSubject<boolean>(this.currentToolbarState)
   public toolbarStateChanged: Observable<boolean> = this.toolbarStateChanges.asObservable();
 
   changeToolbarState(){
     this.toolbarStateChanges.next(!this.currentToolbarState);
   }
 
-  private currentPageName: string = '';
-  private currentPageNameChanges: BehaviorSubject<string> = new BehaviorSubject(this.currentPageName)
+  private currentPageName = '';
+  private currentPageNameChanges = new BehaviorSubject<string>(this.currentPageName)
   public currentPageNameChanged: Observable<string> = this.currentPageNameChanges.asObservable();
 
   setCurrentPageName(pageName:string){
