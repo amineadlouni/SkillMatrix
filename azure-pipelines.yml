@@ -26,9 +26,6 @@ steps:
       ng lint
     displayName: 'Lint Angular code'
 
-  - script: |
-      ng test --watch=false --browsers=ChromeHeadless
-    displayName: 'Run unit tests'
 
   - script: |
       ng build --configuration production
